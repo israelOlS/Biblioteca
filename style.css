@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #061c2c;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+/* Navbar fixo */
+.navbar {
+    position: fixed; /* Torna a navbar fixa */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura da tela */
+    background-color:#061c2c; /* Cor de fundo da navbar */
+    box-shadow: 0 2px 5px #0a2e48; /* Sombra para dar destaque */
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+}
+
+/* Adiciona um padding ao corpo para evitar que o conteúdo fique oculto */
+body {
+    padding-top: 60px; /* Ajuste este valor se necessário */
+}
+
+/* Exemplo para o estilo do link da navbar */
+.navbar .links a {
+    padding: 15px; /* Espaço ao redor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    color: white; /* Cor dos links */
+}
+
+/* Adicione estilos adicionais conforme necessário */
+/* Estilo para a imagem e texto do logo */
+.logo {
+    display: flex; /* Exibe a imagem e o texto na mesma linha */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.logo-img {
+    height: 50px; /* Ajuste conforme necessário */
+    width: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.logo-text {
+    font-size: 1.5rem; /* Estilo do texto da logo */
+    font-weight: bold;
+    color: white; /* Mantém a cor branca do texto */
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.links {
+    display: flex; /* Alinha os itens da lista em linha */
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 0.3;
+    list-style: none; /* Remove os marcadores da lista */
+    padding-right: 50px;
+}
+
+.links li {
+    margin-left: 20px; /* Espaçamento entre os itens da lista */
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.links a:hover {
+    color: gold; /* Cor ao passar o mouse nos links */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajuste conforme necessário */
+    background-image:url(Imagem2.png);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1s ease-in-out; /* Efeito de transição */
+}
+
+.container.visible {
+    opacity: 2; /* Aparece quando a classe 'visible' é adicionada */
+}
+
+.image {
+    position: relative;
+    width: 400px;
+    height: 70%;
+    background-color: white;
+    margin-left: 70px;
+    border-radius: 90% 100% 80%;
+    z-index: 1;
+}
+.image::after {    
+    content: ''; /* Adicionado para que o pseudo-elemento apareça */
+    position: absolute;
+    top: -50px; /* Ajusta a posição para cima, criando o efeito de onda */
+    left: 100px;
+    width: 85%; /* Para ocupar toda a largura do contêiner */
+    height: 90%; /* Altura maior para criar o efeito de onda */
+    background-color: white;
+    border-radius: 100% 45% 90%; /* Mantém o mesmo arredondamento */
+    z-index: 0; /* Coloca o pseudo-elemento atrás da imagem */
+}
+
+.imagem1 {
+    position: relative;
+    height: 350px;
+    width: 350px; /* Ajuste o tamanho da imagem conforme necessário */
+    margin-left: 60px; /* Espaçamento entre a frase e a imagem */
+    margin-top: 35px;
+    z-index: 2;
+}
+
+.parag {
+    flex: 1;
+    margin-left: -20px; /* Move a div mais para a esquerda */
+    margin-right: 20px;
+    text-align: left;
+}
+.parag h1 {
+    font-size: 2.8rem;
+    margin-top: -180px;
+    margin-left: -50px;
+}
+
+.parag h2 {
+    font-size: 2.7rem;
+    margin-left: -50px;
+}
+.parag p{
+    font-size: 1.3rem;
+    margin-left: -50px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center; /* Centraliza o botão */
+    margin-top: 30px; /* Espaço acima do botão */
+    width: 60px; /* Largura desejada da div do botão */
+    margin-left: auto; /* Margem esquerda automática para centralizar */
+    margin-right: auto; /* Margem direita automática para centralizar */
+}
+
+.btn button {
+    background-color: white; /* Cor do botão */
+    color: #061c2c; /* Cor do texto do botão */
+    border: none; /* Remove bordas */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 20px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão */
+    transition: background-color 0.3s ease; /* Transição para hover */
+    width: 20%; /* Faz o botão ocupar 100% da largura da div pai */
+    font-size: 1.8rem;
+}
+
+.btn button:hover {
+    background-color: gold; /* Cor ao passar o mouse */
+    color: #061c2c; /* Cor do texto ao passar o mouse */
+}
+
+/* Sobre*/
+.sobre {
+    padding: 50px;
+    background-color: #061c2c; /* Fundo da seção */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125vh; /* Ajuste conforme necessário */
+    background-image:url(Fundo2.png);
+}
+
+.sobre .apreset p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #061c2c;
+    margin-bottom: 15px;
+}
+
+.apreset {
+    max-width: 50%; /* Limitar a largura do texto */
+    text-align: left;
+    margin-top: -230px;
+}
+
+.apreset h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.apreset p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-size: 1.2rem; /* Tamanho do texto */
+    line-height: 1.5; /* Melhor espaçamento entre linhas */
+    left: 20px;
+}
+
+.image {
+    width: 45%; /* Ajusta a largura da imagem */
+}
+
+.Contorno{
+    position: relative;
+    width: 30%;
+    height: auto;
+    background-color: white;
+    margin-left: 170px;
+    border-radius: 80% 50% 60%;
+    z-index: 1;
+    right: -50px;
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .Contorno {
+        width: 50%; /* Aumenta a largura em telas menores */
+        margin-left: 80px; /* Ajusta a margem */
+        right: 0; /* Centraliza a posição */
+    }
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .Contorno {
+        width: 70%; /* Aumenta a largura para celulares */
+        margin-left: 0; /* Remove a margem */
+        margin-right: 0; /* Remove a margem */
+        right: 0; /* Centraliza a posição */
+    }
+}
+
+/* Responsividade para telas muito pequenas (celulares menores) */
+@media (max-width: 480px) {
+    .Contorno {
+        width: 90%; /* Quase toda a largura da tela */
+        margin-left: 0; /* Remove a margem */
+        margin-right: 0; /* Remove a margem */
+        right: 0; /* Centraliza a posição */
+        border-radius: 50%; /* Ajusta o border-radius para ficar mais circular em telas pequenas */
+    }
+}
+
+.imagem3{
+    position: relative;
+    height: 350px;
+    width: 350px; /* Ajuste o tamanho da imagem conforme necessário */
+    margin-left: 60px; /* Espaçamento entre a frase e a imagem */
+    margin-top: 35px;
+    z-index: 2;
+
+}
+
+.maisInf {
+    display: flex; /* Utiliza flexbox para alinhar os elementos */
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: flex-start; /* Alinha os itens ao início (esquerda) */
+    position: relative;
+    width: 550px; /* Largura do contêiner */
+    max-height: 200px; /* Altura máxima do contêiner */
+    background-color: white; /* Cor de fundo */
+    margin-left: -50px;
+    border-radius: 100px; /* Bordas arredondadas */
+    z-index: 1;
+    overflow-y: auto; /* Permite a rolagem vertical */
+    margin-top: 100px; /* Margem superior */
+    padding: 10px; /* Padding interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para um efeito elevado */
+}
+
+/* Estilizando os parágrafos */
+.maisInf p {
+    font-size: 1.2rem; /* Tamanho da fonte */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+    margin: 10px 0; /* Espaçamento entre os parágrafos */
+    text-align: left; /* Alinha o texto à esquerda */
+    color: #061c2c; /* Cor do texto */
+    padding: 15px; /* Padding lateral para evitar que o texto fique grudado nas bordas */
+}
+
+/* Para detalhes */
+.maisInf .detalhes {
+    font-size: 1rem; /* Tamanho menor para detalhes */
+    color: #333; /* Cor mais escura para detalhes */
+}
+
+/* Personalizando o scroll */
+.maisInf::-webkit-scrollbar {
+    width: 8px; /* Largura do scroll vertical */
+}
+
+.maisInf::-webkit-scrollbar-thumb {
+    background-color: #061c2c; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Deixa o scroll mais arredondado */
+}
+
+.maisInf::-webkit-scrollbar-track {
+    background-color: #f4f4f4; /* Cor do fundo da trilha */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container_sobre {
+        flex-direction: column; /* Empilha o texto e a imagem em telas menores */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .image {
+        width: 100%; /* Imagem ocupa a largura total */
+    }
+
+    .apreset {
+        max-width: 100%;
+    }
+}
+
+/* Estilo do carrossel */
+.carrosel_section {
+    width: 100%;
+    padding: 50px;
+    background-color: #f4f4f4;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(Fundo3.png);
+}
+.titulo_carrossel{
+    margin-top: 50px;
+    margin-bottom: 20px; /* Espaço entre o título e os cards */
+    font-size: 2rem; /* Tamanho do texto */
+    color: #061c2c; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+.parag_carrossel{
+    color: #061c2c;
+
+}
+
+.container_do_carrosel {
+    margin-top: 80px;
+    overflow: hidden;
+    width: 67%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.carrosel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: calc(300px * 5 + 20px * 4); /* Ajustar largura total considerando 5 cards e os gaps */
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    background-color: #061c2c;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Largura do card */
+    margin: 10px; /* Margin entre os cards */
+    display: flex;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    text-align: center; 
+    flex-direction: column;
+}
+
+/* Botões de navegação */
+button {
+    background-color: #061c2c; /* Cor semelhante ao fundo */
+    color: white; /* Texto branco */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Permite posicionar os botões fora do fluxo normal */
+    z-index: 10; /* Certifica que os botões estejam acima dos cards */
+}
+
+/* Botão anterior (esquerda) */
+#prev {
+    left: 60px; /* Posição fixa à esquerda */
+    top: 70%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste para centralização vertical */
+}
+
+/* Botão próximo (direita) */
+#next {
+    right: 60px; /* Posição fixa à direita */
+    top: 70%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste para centralização vertical */
+}
+.card img {
+    margin: 10px;
+    width: 65%; /* A imagem ocupará 100% da largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 250px; /* Define uma altura máxima para as imagens */
+    object-fit: cover; /* Garante que a imagem se ajuste ao card sem distorcer */
+    border-radius: 10px; /* Adiciona um leve arredondamento às imagens */
+}
+
+.carrosel_section h2{
+    font-size: 2.5rem;
+}
+
+.carrosel_section h3{
+    font-size: 1.2rem;
+}
+
+.carrosel_section p{
+    font-size: 1.3rem;
+}
+
+/* Estilo hover para os botões */
+button:hover {
+    background-color: gold;
+    color: #061c2c;
+}
+
+/* Efeito de clique */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container_do_carrosel {
+        width: 90%; /* Ajustar a largura do carrossel */
+    }
+
+    .card {
+        width: 200px; /* Ajuste para cards menores em telas menores */
+        margin: 5px; /* Reduzir a margem entre os cards */
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px;
+        left: 10px;
+        right: 10px;
+    }
+}
+
+.footer {
+    background-color: #333; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 20px 0;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    width: 30%; /* Cada seção ocupa 30% da largura */
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .container-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
